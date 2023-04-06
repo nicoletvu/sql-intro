@@ -24,9 +24,28 @@
 -- | Billy      | Hamilton  |
 -- | Ian        | Happ      |
 
+-- Get team ID: 2931
 SELECT
+    id,
+    name,
+    player_id
+FROM teams
+WHERE name = 'Chicago Cubs'
+   AND year = 2020;
+
+SELECT
+    stats.id,
+    team_id,
+    player_id,
     first_name,
-    last_name,
-    
-FROM players
+    last_name
+FROM stats AS stats
+LEFT JOIN
+    (SELECT
+     id,
+     first_name,
+     last_name
+     FROM players) AS players
+     ON stats.player_id = players.id
+WHERE team_id = 2931;
 
