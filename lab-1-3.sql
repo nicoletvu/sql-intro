@@ -8,4 +8,14 @@
 -- | 2003 | Detroit Tigers       | 43   | 119    |
 -- +------+----------------------+------+--------+
 
+-- ALTER TABLE teams
+-- ADD COLUMN losses/(wins+losses) REAL AS pct_loss;
 
+SELECT
+    year,
+    name,
+    wins,
+    losses
+FROM teams
+ORDER BY losses DESC
+LIMIT 10;

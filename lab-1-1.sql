@@ -14,3 +14,13 @@
 -- +------+-----------------------------------+
 
 
+WITH helper1 AS (
+SELECT
+    year,
+    name
+FROM teams
+ORDER BY year,name)
+
+SELECT
+COUNT(*)
+FROM helper1;

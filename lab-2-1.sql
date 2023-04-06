@@ -15,4 +15,15 @@
 -- | 2019 | New York Yankees       | 103  |
 -- +------+------------------------+------+
 
+WITH helper AS (
+SELECT
+    year,
+    name,
+    wins
+FROM teams
+WHERE wins > 100
+ORDER BY year ASC)
 
+SELECT
+    COUNT(*)
+FROM helper;
